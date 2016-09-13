@@ -1,0 +1,42 @@
+<ion-view title="Login">
+    <ion-nav-bar title="Login" ng-style="{'background-color': primarycolor}">
+
+        <ion-nav-buttons side="left">
+          <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()"></button>
+          <h1 class="title"></h1>
+        </ion-nav-buttons>
+
+    </ion-nav-bar>
+
+    <ion-content class="login-background">
+        <div class="padding">
+
+            <div class="list">
+              <label class="item item-input">
+                <span class="input-label">Username</span>
+                <input type="text" ng-model="userData.email">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Password</span>
+                <input type="password" ng-model="userData.password">
+            </label>
+            <br><br>
+           <span class="error acemtext" ng-show="submittedError">{{errorDescription}}</span>
+
+            <button class="button button-block kinveybutton" ng-disabled="userPresent" ng-click="validateUser()">
+                Login
+            </button>
+              <button class="button button-block kinveybutton" ng-disabled="userPresent" ng-click="validateUserMIC()">
+                Corp SSO Login
+            </button>
+           
+        </div>
+        <div class="padding">
+            <button class="button button-block kinveybutton" ng-disabled="!userPresent" ng-click="logout()">
+                Logout
+            </button>
+            <span class="error" ng-show="submittedError">{{errorDescription}}</span>
+        </div>
+
+    </ion-content>
+</ion-view>                
