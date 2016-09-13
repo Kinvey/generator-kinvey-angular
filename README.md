@@ -20,14 +20,14 @@ npm install
 npm link
 ```
 
-* Navigate to a folder where you'd like your new project. Call `yo kinvey-angular` to start generating a new project:
+* Navigate to a folder where you'd like your new project. Call `yo kinvey-angular` to kick off a new project.
 
 ```bash
 cd ~/Desktop
 yo kinvey-angular
 ```
 
-* You will be prompted to open your default text editor and enter a configuration JSON. The config json should have the following schema -
+* You will be prompted to open your default text editor and provide a configuration JSON. The config json should have the following schema.
 
 ```json
 {
@@ -45,7 +45,7 @@ yo kinvey-angular
 ```
 where `<appkey>`, `<appsecret>` and `<collection-n>` must map to corresponding values for a Kinvey backend environment.
 
-* Serve up the app you just built in a browser with `ionic serve`.
+* Serve up the app you just built with `ionic serve` (this runs it in a browser, use other [ionic commands](http://ionicframework.com/getting-started/) to run it in a device)
 ```bash
 ionic serve
 ```
