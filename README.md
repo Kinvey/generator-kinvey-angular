@@ -27,7 +27,9 @@ cd ~/Desktop
 yo kinvey-angular
 ```
 
-* You will be prompted to open your default text editor and provide a configuration JSON. The config json should have the following schema.
+* You will be prompted to open your default text editor and provide a configuration JSON. The config json should have the following schema, where `<appkey>`, `<appsecret>` and `<collection-n>` must map to corresponding values for a Kinvey backend environment.
+
+_Note: the tool assumes that each collection has a `name` and `description` field, and uses the values of these fields in the UI. This assumption will likely be removed in the future._
 
 ```json
 {
@@ -43,7 +45,6 @@ yo kinvey-angular
   "appsecret": "<appsecret>"
 }
 ```
-where `<appkey>`, `<appsecret>` and `<collection-n>` must map to corresponding values for a Kinvey backend environment.
 
 * Serve up the app you just built with `ionic serve` (this runs it in a browser, use other [ionic commands](http://ionicframework.com/getting-started/) to run it in a device)
 ```bash
