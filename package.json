@@ -1,5 +1,5 @@
 {
-  "name": "generator-kinvey-builder",
+  "name": "generator-kinvey-angular",
   "version": "0.0.0",
   "description": "Builds new Kinvey AngularJS app from a configuration JSON file.",
   "homepage": "https://devcenter.kinvey.com/angular",
@@ -42,7 +42,7 @@
       "mocha": true
     }
   },
-  "repository": "/generator-kinvey-builder",
+  "repository": "/generator-kinvey-angular",
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp"

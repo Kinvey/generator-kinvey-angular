@@ -1,19 +1,19 @@
-# generator-kinvey-builder [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# generator-kinvey-angular [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 > Builds new Kinvey JS (Angular) app from a skin
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-kinvey-builder using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) and generator-kinvey-angular using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
-npm install -g generator-kinvey-builder
+npm install -g generator-kinvey-angular
 ```
 
 Then generate your new project:
 
 ```bash
-yo kinvey-builder
+yo kinvey-angular
 ```
 
 ## Getting To Know Yeoman
@@ -28,11 +28,11 @@ yo kinvey-builder
 Apache-2.0 © [Tejas]()
 
 
-[npm-image]: https://badge.fury.io/js/generator-kinvey-builder.svg
-[npm-url]: https://npmjs.org/package/generator-kinvey-builder
-[travis-image]: https://travis-ci.org//generator-kinvey-builder.svg?branch=master
-[travis-url]: https://travis-ci.org//generator-kinvey-builder
-[daviddm-image]: https://david-dm.org//generator-kinvey-builder.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org//generator-kinvey-builder
-[coveralls-image]: https://coveralls.io/repos//generator-kinvey-builder/badge.svg
-[coveralls-url]: https://coveralls.io/r//generator-kinvey-builder
+[npm-image]: https://badge.fury.io/js/generator-kinvey-angular.svg
+[npm-url]: https://npmjs.org/package/generator-kinvey-angular
+[travis-image]: https://travis-ci.org//generator-kinvey-angular.svg?branch=master
+[travis-url]: https://travis-ci.org//generator-kinvey-angular
+[daviddm-image]: https://david-dm.org//generator-kinvey-angular.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org//generator-kinvey-angular
+[coveralls-image]: https://coveralls.io/repos//generator-kinvey-angular/badge.svg
+[coveralls-url]: https://coveralls.io/r//generator-kinvey-angular
