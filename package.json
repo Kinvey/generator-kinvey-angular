@@ -1,12 +1,12 @@
 {
   "name": "generator-kinvey-builder",
   "version": "0.0.0",
-  "description": "Builds new Kinvey JS (Angular) app from a skin",
-  "homepage": "",
+  "description": "Builds new Kinvey AngularJS app from a configuration JSON file.",
+  "homepage": "https://devcenter.kinvey.com/angular",
   "author": {
     "name": "Tejas",
     "email": "tejas@kinvey.com",
-    "url": ""
+    "url": "https://github.com/tejasranade"
   },
   "files": [
     "generators"
