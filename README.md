@@ -1,5 +1,5 @@
-# generator-kinvey-angular [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> Builds new Kinvey JS (Angular) app from a skin
+# generator-kinvey-angular
+> Builds new Kinvey AngularJS app from a configuration JSON file.
 
 ## Installation
 
