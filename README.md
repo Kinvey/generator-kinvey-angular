@@ -1,27 +1,54 @@
 # generator-kinvey-angular
-> Builds new Kinvey AngularJS app from a configuration JSON file.
+> Build a complete Kinvey AngularJS app from a configuration JSON file.
 
-## Installation
+## How to Use Locally
 
-First, install [Yeoman](http://yeoman.io) and generator-kinvey-angular using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+* Install [Yeoman](http://yeoman.io) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+* Clone this repo and from the root folder, run `npm install` followed by `npm link`. 
 
 ```bash
+#Install yeoman
 npm install -g yo
-npm install -g generator-kinvey-angular
+
+#Clone the repo
+git clone <repo-url>
+
+#Install dependencies
+npm install
+
+#Install the package globally as a symlink
+npm link
 ```
 
-Then generate your new project:
+* Navigate to a folder where you'd like your new project. Call `yo kinvey-angular` to start generating a new project:
 
 ```bash
+cd ~/Desktop
 yo kinvey-angular
 ```
 
-## Getting To Know Yeoman
+* You will be prompted to open your default text editor and enter a configuration JSON. The config json should have the following schema -
 
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
+```json
+{
+  "collections": [
+    {
+      "name": "<collection-1>"
+    },
+    {
+      "name": "<collection-2>"
+    }
+  ],
+  "appkey": "<appkey>",
+  "appsecret": "<appsecret>"
+}
+```
+where `<appkey>`, `<appsecret>` and `<collection-n>` must map to corresponding values for a Kinvey backend environment.
+
+* Serve up the app you just built in a browser with `ionic serve`.
+```bash
+ionic serve
+```
 
 ## License
 
