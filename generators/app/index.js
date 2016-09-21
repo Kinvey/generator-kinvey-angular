@@ -54,7 +54,10 @@ module.exports = yeoman.Base.extend({
         app.environments.map(function(env){   //loop through environments
           envChoices.push ({
             name : app.name + '(' + env.name + ')',
-            value: env
+            value: {
+             app: app,
+             env: env 
+            }
           });  
         });
         
@@ -62,11 +65,11 @@ module.exports = yeoman.Base.extend({
 
       var envPrompt = [{
         type: 'list',
-        name: 'env',
+        name: 'environment',
         message: 'What environment are you building this app for?',
         choices: envChoices,
-        filter: function (env){
-          return env;
+        filter: function (selection){
+          return selection;
         }
       }];
 
@@ -74,10 +77,11 @@ module.exports = yeoman.Base.extend({
 
     }.bind(this)).then(function(props){
       //env selected, get collections
-      this.props.config.appkey = props.env.id;
-      this.props.config.appsecret = props.env.appSecret;
-
-      return KinveyApi.collections(props.env.id);
+      
+      this.props.config.app = props.environment.app;
+      this.props.config.env = props.environment.env;
+      
+      return KinveyApi.collections(props.environment.env.id);
 
     }.bind(this)).then(function(collections){
       //Collections Retrieved

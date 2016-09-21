@@ -45,8 +45,8 @@ angular.module('starter', ['ionic', 'kinvey', 'starter.controllers', 'ngIOS9UIWe
 
     //Initialize Kinvey
     $kinveyProvider.init({
-        appKey: '<%= config.appkey %>',
-        appSecret: '<%= config.appsecret %>'
+        appKey: '<%= config.env.id %>',
+        appSecret: '<%= config.env.appSecret %>'
     });
 
     $stateProvider
