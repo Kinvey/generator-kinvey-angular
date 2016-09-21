@@ -43,7 +43,7 @@ module.exports = yeoman.Base.extend({
 
     }.bind(this)).then(function(user){      
       //User is logged in
-      this.log("logged in as " + user.email);
+      this.log("Logged in as " + user.email);
       return KinveyApi.apps();
 
     }.bind(this)).then(function(apps){
@@ -95,6 +95,9 @@ module.exports = yeoman.Base.extend({
       var collections = selection.collections;
       this.props.config.collections = collections;
 
+    }.bind(this)).catch(function(error){      
+      this.log("Something bad happened.\n" + error);
+      
     }.bind(this));
   },
 
