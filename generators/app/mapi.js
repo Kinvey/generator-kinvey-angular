@@ -8,7 +8,7 @@ module.exports = {
 
 	token: null,
 
-	login: function (email, password){		
+	login: function (email, password) {
 
 		return rp({
 			uri: this.baseUrl + '/session',

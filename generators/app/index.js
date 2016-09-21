@@ -38,7 +38,7 @@ module.exports = yeoman.Base.extend({
       //User credentials
       this.props = props;
       this.props.config = {};
-      this.log("logging in as " + this.props.email);
+      
       return KinveyApi.login(this.props.email, this.props.password);
 
     }.bind(this)).then(function(user){      
@@ -60,8 +60,6 @@ module.exports = yeoman.Base.extend({
         
       });
 
-      this.log("env choices: " + JSON.stringify(envChoices));
-
       var envPrompt = [{
         type: 'list',
         name: 'env',
@@ -76,7 +74,6 @@ module.exports = yeoman.Base.extend({
 
     }.bind(this)).then(function(props){
       //env selected, get collections
-      this.log ('selected environment: ' + props.env.name);      
       this.props.config.appkey = props.env.id;
       this.props.config.appsecret = props.env.appSecret;
 
@@ -84,7 +81,18 @@ module.exports = yeoman.Base.extend({
 
     }.bind(this)).then(function(collections){
       //Collections Retrieved
-      this.log ('collections: ' + JSON.stringify(collections));      
+      var colPrompt = [{
+        type : 'checkbox',
+        name : 'collections',
+        message : 'Select the collections you want to include in your app',
+        choices : collections
+      }];
+
+      return this.prompt(colPrompt);
+
+    }.bind(this)).then(function(selection){
+      //User selected some collections
+      var collections = selection.collections;
       this.props.config.collections = collections;
 
     }.bind(this));
@@ -136,10 +144,7 @@ module.exports = yeoman.Base.extend({
     this.log("collections: " + collections);
 
     for (var i=0; i<collections.length; i++){
-      var collection = collections[i];
-      this.log("collection: " + collection);
-
-      var collectionName = collection.name;
+      var collectionName = collections[i];
       this.log("processing collection: " + collectionName);
       
       this.fs.copyTpl(
@@ -161,6 +166,13 @@ module.exports = yeoman.Base.extend({
   },
 
   install: function () {
-    //this.installDependencies();
+    this.installDependencies();
+  },
+
+  end: {
+    goodbye: function(){
+      console.log ("\n\nWe're done! Your app is ready to be tried out. Run " + chalk.yellow("ionic serve") + " and enjoy!\n");
+    }
   }
+
 });
