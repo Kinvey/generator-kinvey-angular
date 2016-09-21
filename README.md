@@ -4,12 +4,22 @@
 ## How to Use Locally
 
 * Install [Yeoman](http://yeoman.io) (we assume you have pre-installed [node.js](https://nodejs.org/)).
-* Clone this repo and from the root folder, run `npm install` followed by `npm link`. 
 
 ```bash
 #Install yeoman
 npm install -g yo
+```
 
+* Install ionic. If you have it already, skip this step. 
+
+```bash
+#Install ionic
+npm install -g ionic
+```
+
+* Clone this repo. From the root folder, run `npm install` followed by `npm link`. 
+
+```bash
 #Clone the repo
 git clone <repo-url>
 
@@ -20,7 +30,7 @@ npm install
 npm link
 ```
 
-* Navigate to a folder where you'd like your new project. Call `yo kinvey-angular` to kick off a new project.
+* Navigate to a folder where you'd like your new project (this should be different from the folder where you cloned this generator). Call `yo kinvey-angular` to kick off a new project.
 
 ```bash
 cd ~/Desktop
