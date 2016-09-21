@@ -27,26 +27,14 @@ cd ~/Desktop
 yo kinvey-angular
 ```
 
-* You will be prompted to open your default text editor and provide a configuration JSON. The config json should have the following schema, where `<appkey>`, `<appsecret>` and `<collection-n>` must map to corresponding values for a Kinvey backend environment.
+* You will be prompted for your Kinvey credentials. If you don't have a Kinvey account yet, please sign up for one [here](https://us1.kinvey.com). We also recommend having at least one collection in your app before walking through the next steps.
+
+* The generator will walk you through selecting an application environment and adding some collections to your client app. Make your selections and watch as the generator spins off a new Angular app, adds views for the collections you picked and then installs the dependencies.
 
 _Note: the tool assumes that each collection has a `name` and `description` field, and uses the values of these fields in the UI. This assumption will likely be removed in the future._
 
-```json
-{
-  "collections": [
-    {
-      "name": "<collection-1>"
-    },
-    {
-      "name": "<collection-2>"
-    }
-  ],
-  "appkey": "<appkey>",
-  "appsecret": "<appsecret>"
-}
-```
-
 * Serve up the app you just built with `ionic serve` (this runs it in a browser, use other [ionic commands](http://ionicframework.com/getting-started/) to run it in a device)
+
 ```bash
 ionic serve
 ```
