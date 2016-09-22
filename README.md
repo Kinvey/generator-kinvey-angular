@@ -1,5 +1,5 @@
 # generator-kinvey-angular
-> Build a complete Kinvey AngularJS app from a configuration JSON file.
+> Build a complete AngularJS app connected to your Kinvey backend. 
 
 ## How to Use Locally
 
