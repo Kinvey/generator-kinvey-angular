@@ -1,7 +1,7 @@
 /* Empty. Add your own CSS if you like */
 .bar-acme {
-	background-color: #0088c2 !important;
-	color: #0088c2;	
+  background-color: #0088c2 !important;
+  color: #0088c2; 
 }
 
 .bar-kinvey {
@@ -15,7 +15,7 @@
 }
 
 .acme-text {
-	color: #0088c2 !important;
+  color: #0088c2 !important;
 }
 
 .gray-text {
@@ -228,12 +228,12 @@
    }
 .kinveybutton:hover {
    border-top-color: #333333;
-   background: #f5a68e;
+   background: #909090;
    color: #ffffff;
    }
 .kinveybutton:active {
    border-top-color: #1b435e;
-   background: #f5a68e;
+   background: #909090;
    color: #ffffff;
    }
 
@@ -247,10 +247,7 @@
 
 
 .login-background {
-  background: url('../img/splash.png') no-repeat center center fixed;
-  background-size: cover;
-  height: 100%;
-  overflow: hidden;
+  background: #d4d4d4;
 }
 
 .scroll {

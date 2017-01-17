@@ -60,6 +60,7 @@ module.exports = yeoman.Base.extend({
         name: 'environment',
         message: 'What environment are you building this app for?',
         choices: envChoices,
+        store: true,
         filter: function (selection){
           return selection;
         }
