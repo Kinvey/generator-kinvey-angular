@@ -8,7 +8,7 @@
 
     <ion-side-menu side="left">
         <ion-header-bar class="bar-gray">
-            <h1 class="title" style="color: #D44B2B"> <%= config.app.name %> </h1>
+            <h1 class="title" ng-style="{'color': textColor}"> <%= config.app.name %> </h1>
         </ion-header-bar>
         <ion-content>
             <ul class="list">
@@ -17,12 +17,12 @@
                 </a>
                 <% var collections = config.collections %>
                 <% for (var i=0; i<collections.length; i++) { %>
-                <a class="item item-icon-left nav-clear menu-close" href="#/menu/<%= collections[i] %>" style="color: #D44B2B">
+                <a class="item item-icon-left nav-clear menu-close" href="#/menu/<%= collections[i] %>" ng-style="{'color': textColor}">
                     <i class="icon ion-ios-paper"></i> <%= collections[i] %>
                 </a>
                 <% } %>
 
-                <a class="item item-icon-left nav-clear menu-close" href="#/menu/login" style="color: #D44B2B">
+                <a class="item item-icon-left nav-clear menu-close" href="#/menu/login" ng-style="{'color': textColor}">
                     <i class="icon ion-ios-contact"></i> Account
                 </a>
             </ul>

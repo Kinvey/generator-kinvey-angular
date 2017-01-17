@@ -11,14 +11,6 @@ module.exports = yeoman.Base.extend({
       'Welcome to the mind-blowing ' + chalk.red('Kinvey') + ' bootstrapper!'
     ));
 
-    // var prompts = [{
-    //   type: 'editor',
-    //   name: 'config',
-    //   message: 'Enter your configuration json',
-    //   default: '',
-    //   store: true
-    // }];
-
     this.log('Enter your Kinvey credentials to continue');
 
     var prompts = [{
@@ -85,10 +77,17 @@ module.exports = yeoman.Base.extend({
 
     }.bind(this)).then(function(collections){
       //Collections Retrieved
+      const reserved = ['user', '_blob'];
+      collections = collections.filter(function(collection){
+        return reserved.indexOf(collection.name) < 0;
+      });
+
+      this.props.allCollections = collections;
+
       var colPrompt = [{
         type : 'checkbox',
         name : 'collections',
-        message : 'Select the collections you want to include in your app',
+        message : 'Select the collections you want to include in your app as views.',
         choices : collections
       }];
 
@@ -98,8 +97,36 @@ module.exports = yeoman.Base.extend({
       //User selected some collections
       var collections = selection.collections;
       this.props.config.collections = collections;
+      
+      const noSelection = '<No selection>';
+      var skinChoices = [noSelection];
+      
+      //filter out the selected collections
+      this.props.allCollections.map(function(collection){      
+        if (collections.indexOf(collection.name) < 0){
+          skinChoices.push(collection);
+        }          
+      });
 
-    }.bind(this)).catch(function(error){      
+      var skinPrompt = [{
+        type: 'list',
+        name: 'skin',
+        message: 'Do you have a collection that skins the app? If you do, select it here. If not, enter <No Selection>.',
+        choices: skinChoices,
+        filter: function (selection){
+          return selection;
+        }
+      }];
+
+      return this.prompt(skinPrompt);
+    }.bind(this)).then(function(skinSelection){
+      var skin = skinSelection.skin;
+      if (skin !== '<No Selection>'){
+        this.props.config.skin = skinSelection.skin;
+        this.props.config.collections
+      }
+      
+    }.bind(this)).catch(function(error){
       this.log("Something bad happened.\n" + error);
       
     }.bind(this));
@@ -148,7 +175,17 @@ module.exports = yeoman.Base.extend({
     // //setup the collections
     const collections = config.collections;
 
+    this.fs.copyTpl(
+      this.templatePath('www/js/_controllers.js'),
+      this.destinationPath(`www/js/controllers.js`),
+      {
+        config : config
+      }
+    );        
+
+
     this.log("collections: " + collections);
+    this.log("skin: " + config.skin);
 
     for (var i=0; i<collections.length; i++){
       var collectionName = collections[i];
