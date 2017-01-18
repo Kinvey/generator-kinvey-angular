@@ -1,6 +1,6 @@
 {
   "name": "generator-kinvey-angular",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Builds new Kinvey AngularJS app from a configuration JSON file.",
   "homepage": "https://devcenter.kinvey.com/angular",
   "author": {
